@@ -6,7 +6,7 @@
 }
 body
 {
-    background: url(/images/background.jpg);
+    background: url(images/background.jpg);
     background-attachment: fixed;
     font-family: 'Open-Sans', sans-serif;
     height: 20900px;
@@ -28,7 +28,7 @@ body
 }
 .nav-content
 {
-    background: url(/images/KdQtTj.jpg);
+    background: url(images/KdQtTj.jpg);
     display: flex;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -210,7 +210,7 @@ body
 }
 .ariticle-player-online
 {
-    background: url(/images/steven_icon.png) no-repeat;
+    background: url(images/steven_icon.png) no-repeat;
     font-size: 19px;
     text-align: center;
     border-bottom: 1px solid rgb(0, 0, 0);
@@ -219,7 +219,7 @@ body
 .ariticle-ip-server
 {
     font-size: 19px;
-    background: url(/images/minecraft-world-icon-14.jpg) no-repeat;
+    background: url(images/minecraft-world-icon-14.jpg) no-repeat;
     text-align: center;
     border-bottom: 1px solid rgb(0, 0, 0);
     

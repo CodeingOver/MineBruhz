@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{
+    background: url(/images/background.jpg);
+    background-attachment: fixed;
+    font-family: 'Open-Sans', sans-serif;
+    height: 20900px;
+}
+.header
+{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo
+{
+    height: 150px;
+    display: flex;
+}
+.logo a
+{
+    margin: auto;
+    
+}
+.nav-content
+{
+    background: url(/images/KdQtTj.jpg);
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.nav-content li:hover .sub-nav-menu
+{
+    display: block;
+}
+.nav-menu
+{
+    margin: auto;
+}
+.nav-menu .sub-nav-menu
+{
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.nav-menu .sub-nav-menu a
+{
+    color: black;
+}
+.nav-menu,.sub-nav-menu
+{
+    list-style: none;
+}
+.sub-nav-menu
+{
+    margin-left: -12px;
+}
+.nav-menu.father
+{
+    position: relative;
+}
+.nav-menu-list
+{
+    margin: 0 2px;
+}
+.nav-menu-list>a
+{
+    padding: 8px 0;
+}
+.nav-menu-list>a
+{
+    text-transform: uppercase;
+    color: rgb(255, 0, 0);
+}
+.nav-menu-list,.linking
+{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 38px;
+    padding: 0 12px;
+    transition: 0.25s;
+}
+.nav-menu li:hover a
+{
+    text-decoration: none;
+    color: black;
+}
+.nav-menu >li:hover>a,
+.nav-menu li:hover
+{
+    color: black;
+    background-color: #ccc;
+}
+/* .nav-menu li:hover
+{
+    color: black;
+    background-color: #ccc;
+} */
+.Mid
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.Mid-content
+{
+    height: 20400px;
+    background-color: #f5f5f5;
+    width: 900px;
+    border: 4px solid #760505;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.Mid-content-scrip-top
+{
+    width: 800px;
+    height: 400px;
+    margin: 40px auto;
+}
+.Mid-content-scrip-top img
+{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.Mid-content-scrip
+{
+    width: 800px;
+    height: 1800px;
+    margin: 0 auto;
+}
+.Mid-content-scrip-child .Mid-content-scrip-frist
+{
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.Mid-content-scrip-child h3
+{
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    /* text-transform: uppercase; */
+}
+.Mid-content-scrip-child p
+{
+    /* font-weight: bold; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 19px;
+}
+.Mid-content-scrip-child li
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-left: 28px;
+}
+.Mid-content-scrip-group-list
+{
+    width: 780px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid;
+
+}
+.Menuquick-list a
+{
+    text-decoration: none;
+    display: block;
+    color: blue;
+    transition: 0.05s;
+}
+.Menuquick-list a:hover
+{
+    color: chocolate;
+}
+.Menuquick label
+{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+}
+.Menuquick-list a[href*="subqmenu"]:before
+{
+    content: "•";
+    margin-right: 8px;
+}
+.Mid-content-scrip img
+{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.article
+{   
+    background-color: chocolate;
+    width: 300px;
+    border: 4px solid #760505;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.ariticle-player
+{
+    /* border: 1px solid white; */
+    margin-top: 50px;
+}
+.ariticle-player div
+{
+    margin-top: 20px;
+    height: 30px;
+    width: 250px;
+    /* border-bottom: 1px solid rgb(0, 0, 0); */
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 25px;
+}
+.ariticle-player-online
+{
+    background: url(/images/steven_icon.png) no-repeat;
+    font-size: 19px;
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    
+}
+.ariticle-ip-server
+{
+    font-size: 19px;
+    background: url(/images/minecraft-world-icon-14.jpg) no-repeat;
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    
+}
+.ariticle-server-version
+{
+    font-size: 19px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    
+}
+.ariticle-discord-Widget
+{
+    height: 500px;
+    /* border: 1px solid white; */
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#description
+{
+    width: 1200px;
+    height: 150px;
+    background-color: #222222;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    color: #959595;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    
+}
+#description p
+{
+    margin: 20px 40px;
+    font-size: 17px;
+}
+#description a
+{
+    color: #959595;
+    text-decoration: none;
+    transition: 0.25s;
+}
+#description a:hover
+{
+    color: aqua;
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{
+    background: url(/images/napthe-images.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+    font-family: 'Open-Sans', sans-serif; 
+    height: 1800px;
+}
+.logo
+{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+}
+.warpper
+{
+    width: 650px;
+    height: 1600px;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+.form-heading
+{
+    text-align: center;
+    padding-top: 10px;
+}
+.form-heading a
+{
+    text-decoration: none;
+    color: aqua;
+    transition: 0.25s;
+}
+.form-heading a:hover
+{
+    color: chocolate;
+}
+.row
+{
+    margin-top: 30px;
+    margin-left: 9%;
+    font-size: 19px;
+    display: flex;
+}
+.row-left
+{
+    width: 110px;
+}
+.row input,
+.row select
+{
+    height: 40px;
+    font-size: 19px;
+    width: 400px;
+    padding-left: 5px;
+    border-radius: 5px;
+    outline: 0;
+}
+.row .form-submit
+{
+    height: 50px;
+    width: 150px;
+}
+.form-submit
+{
+    cursor: pointer;
+    margin: 0 auto;
+    transition: 0.25s ease-in-out;
+}
+.form-submit:hover
+{
+    border: 1px solid #2f00ff;
+    cursor: pointer;
+    background-color: rgb(0, 255, 72);
+}
+.warning
+{
+    margin-top: 100px;
+}
+.warning ul
+{
+    list-style: none;
+}
+.warning li
+{
+    color: red;
+    font-size: 16px;
+    margin: 10px auto;
+    padding-left: 30px;
+    font-weight: bold;
+}
+.QR-code-card
+{
+    margin-top: 100px;
+    text-align: center;
+}
+.QR-code-card h1
+{
+    margin-bottom: 20px;
+}

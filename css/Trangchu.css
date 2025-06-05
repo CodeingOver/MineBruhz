@@ -25,6 +25,11 @@
     box-sizing: border-box;
 }
 
+#contaior {
+    overflow: visible;
+    position: relative;
+}
+
 body
 {
     background: linear-gradient(135deg, var(--primary-bg) 0%, #1a1a1a 100%);
@@ -33,6 +38,8 @@ body
     color: var(--text-primary);
     min-height: 100vh;
     line-height: 1.6;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .header
 {
@@ -43,6 +50,8 @@ body
     margin-top: 20px;
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10000;
 }
 
 .logo
@@ -72,6 +81,9 @@ body
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     margin-bottom: 30px;
+    position: relative;
+    overflow: visible;
+    z-index: 10000;
 }
 .nav-content li:hover .sub-nav-menu
 {
@@ -90,12 +102,20 @@ body
     }
 }
 
+/* Ensure dropdown stays visible when hovering over it */
+.father:hover .sub-nav-menu,
+.sub-nav-menu:hover {
+    display: block;
+}
+
 .nav-menu
 {
     margin: auto;
     display: flex;
     align-items: center;
     list-style: none;
+    position: relative;
+    z-index: 10001;
 }
 
 .nav-menu .sub-nav-menu
@@ -108,12 +128,11 @@ body
     border-radius: 10px;
     box-shadow: var(--shadow-lg);
     min-width: 200px;
-    z-index: 1000;
+    z-index: 10001;
     top: 100%;
     left: 0;
     list-style: none;
     padding: 10px 0;
-    margin-top: 5px;
 }
 
 .nav-menu .sub-nav-menu a
@@ -140,6 +159,7 @@ body
 .father
 {
     position: relative;
+    overflow: visible;
 }
 
 .father:hover .sub-nav-menu {
@@ -150,6 +170,7 @@ body
 {
     margin: 0 2px;
     position: relative;
+    overflow: visible;
 }
 
 .nav-menu-list>a
@@ -165,7 +186,7 @@ body
     transition: all 0.3s ease;
     border-radius: 8px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .nav-menu-list>a:hover {
@@ -541,6 +562,7 @@ body
     border-radius: 16px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-lg);
+    z-index: 1;
 }
 
 .hero-content {
@@ -550,7 +572,7 @@ body
     width: 100%;
     padding: 60px 40px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero-text {

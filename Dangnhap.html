@@ -1,34 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://cdn-longterm.mee6.xyz/plugins/commands/images/841690380290097253/77539f830b4eb4a3a15aa6d9f4f9aec9d726ba907e433877032ab213784ad360.png">
-    <link rel="stylesheet" href="../css/Dangnhap.css">
+    <link rel="stylesheet" href="css/Dangnhap.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <title>Đăng Nhập - MineBruh</title>
 </head>
 <body>
+    <!-- Main Container -->
     <div id="wrapper">
-        <form action="" id="form-login">
-            <h1 class="form-heading"><a href="index.html" class="form-heading-link">MineBruh </a>Đăng Nhập</h1>
-            <div class="form-group">
-                <i class="far fa-user"></i>
-                <input type="text" class="form-input" placeholder="Tên đăng nhập" required autofocus>
+        <!-- Header Section with Logo -->
+        <header class="header-section">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/standard_1.gif" alt="MineBruh Logo" class="logo-image">
+                </a>
             </div>
-            <div class="form-group">
-                <i class="far fa-key"></i>
-                <input type="password" class="form-input" placeholder="Mật khẩu" required autofocus>
-                <div class="eye">
-                    <i class="far fa-eye"></i>
-                </div>
+        </header>
+
+        <!-- Login Form Section -->
+        <main class="main-content">
+            <section class="login-section">
+                <form action="" id="form-login" method="post">
+                    <!-- Form Header -->
+                    <div class="form-header">
+                        <h1 class="form-heading">
+                            <a href="index.html" class="form-heading-link">MineBruh</a> 
+                            Đăng Nhập
+                        </h1>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <div class="form-body">
+                        <!-- Username Field -->
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Tên đăng nhập</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-user input-icon"></i>
+                                <input 
+                                    type="text" 
+                                    id="username"
+                                    name="username"
+                                    class="form-input" 
+                                    placeholder="Tên đăng nhập" 
+                                    required 
+                                    autofocus
+                                    autocomplete="username"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Mật khẩu</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-key input-icon"></i>
+                                <input 
+                                    type="password" 
+                                    id="password"
+                                    name="password"
+                                    class="form-input" 
+                                    placeholder="Mật khẩu" 
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <div class="eye password-toggle" role="button" tabindex="0" aria-label="Hiện/ẩn mật khẩu">
+                                    <i class="far fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me and Forgot Password -->
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="remember" name="remember">
+                                <span class="checkmark"></span>
+                                Ghi nhớ đăng nhập
+                            </label>
+                            <a href="Doimatkhau.html" class="forgot-password">Quên mật khẩu?</a>
+                        </div>
+                    </div>
+
+                    <!-- Form Footer -->
+                    <div class="form-footer">
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-sign-in-alt submit-icon"></i>
+                            Đăng Nhập
+                        </button>
+                        
+                        <div class="form-divider">
+                            <span>Hoặc</span>
+                        </div>
+
+                        <div class="social-login">
+                            <p class="social-text">Đăng nhập nhanh với:</p>
+                            <div class="social-buttons">
+                                <button type="button" class="social-btn discord-btn">
+                                    <i class="fab fa-discord"></i>
+                                    Discord
+                                </button>
+                                <button type="button" class="social-btn google-btn">
+                                    <i class="fab fa-google"></i>
+                                    Google
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="register-link">
+                            <p class="text-fooding">
+                                Bạn chưa có tài khoản? 
+                                <a href="Dangky.html" class="text-fooding-link">Đăng ký ngay</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Additional Links Section -->
+        <footer class="form-footer-links">            <div class="quick-links">
+                <a href="index.html" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <span>Trang Chủ</span>
+                </a>
+                <a href="Taigame.html" class="quick-link">
+                    <i class="fas fa-download"></i>
+                    <span>Tải Game</span>
+                </a>
+                <a href="https://discord.gg/EaP8TaRtQE" class="quick-link" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
             </div>
-            <input type="submit" value="Đăng nhập" class="form-submit">
-            <h4 class="text-fooding">Bạn chưa có tài khoản? <a href="Dangky.html" class="text-fooding-link">Hãy đăng ký tại đây</a></h4>
-        </form>
-        
+        </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/Dangnhap.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="/js/main.js"></script>
 </html>

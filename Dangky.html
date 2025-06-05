@@ -1,45 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://cdn-longterm.mee6.xyz/plugins/commands/images/841690380290097253/77539f830b4eb4a3a15aa6d9f4f9aec9d726ba907e433877032ab213784ad360.png">
-    <link rel="stylesheet" href="../css/Dangky.css">
+    <link rel="stylesheet" href="css/Dangky.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <title>Đăng ký - MineBruh</title>
+    <title>Đăng Ký - MineBruh</title>
 </head>
 <body>
+    <!-- Main Container -->
     <div id="wrapper">
-        <form action="" id="form-register">
-            <h1 class="form-heading"><a href="index.html" class="form-heading-link">MineBruh </a>Đăng Ký</h1>
-            <div class="form-group">
-                <i class="far fa-user"></i>
-                <input type="text" class="form-input" placeholder="Tên đăng nhập" required autofocus>
+        <!-- Header Section with Logo -->
+        <header class="header-section">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/standard_1.gif" alt="MineBruh Logo" class="logo-image">
+                </a>
             </div>
-            <div class="form-group">
-                <i class="far fa-envelope"></i>
-                <input type="email" class="form-input" placeholder="Email" required autofocus>
+        </header>
+
+        <!-- Registration Form Section -->
+        <main class="main-content">
+            <section class="register-section">
+                <form action="" id="form-register" method="post">
+                    <!-- Form Header -->
+                    <div class="form-header">
+                        <h1 class="form-heading">
+                            <a href="index.html" class="form-heading-link">MineBruh</a> 
+                            Đăng Ký
+                        </h1>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <div class="form-body">
+                        <!-- Username Field -->
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Tên đăng nhập</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-user input-icon"></i>
+                                <input 
+                                    type="text" 
+                                    id="username"
+                                    name="username"
+                                    class="form-input" 
+                                    placeholder="Tên đăng nhập" 
+                                    required 
+                                    autofocus
+                                    autocomplete="username"
+                                    minlength="3"
+                                    maxlength="20"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-envelope input-icon"></i>
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    name="email"
+                                    class="form-input" 
+                                    placeholder="Email" 
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Mật khẩu</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-key input-icon"></i>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password"
+                                    class="form-input" 
+                                    placeholder="Mật khẩu" 
+                                    required
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    maxlength="50"
+                                >
+                                <div class="password-toggle" role="button" tabindex="0" aria-label="Hiện/ẩn mật khẩu">
+                                    <i class="far fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password Field -->
+                        <div class="form-group">
+                            <label for="repassword" class="sr-only">Nhập lại mật khẩu</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-key input-icon"></i>
+                                <input 
+                                    type="password" 
+                                    id="repassword" 
+                                    name="repassword"
+                                    class="form-input" 
+                                    placeholder="Nhập lại mật khẩu" 
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <div class="password-toggle-confirm" role="button" tabindex="0" aria-label="Hiện/ẩn mật khẩu xác nhận">
+                                    <i class="far fa-eye"></i>
+                                </div>
+                            </div>
+                            <div id="repassword_error" class="error-message">Mật khẩu không khớp!</div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-options">
+                            <label class="terms-agreement">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                Tôi đồng ý với <a href="#" class="terms-link">Điều khoản sử dụng</a> và <a href="#" class="privacy-link">Chính sách bảo mật</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Form Footer -->
+                    <div class="form-footer">
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-user-plus submit-icon"></i>
+                            Đăng Ký
+                        </button>
+                        
+                        <div class="form-divider">
+                            <span>Hoặc</span>
+                        </div>
+
+                        <div class="social-register">
+                            <p class="social-text">Đăng ký nhanh với:</p>
+                            <div class="social-buttons">
+                                <button type="button" class="social-btn discord-btn">
+                                    <i class="fab fa-discord"></i>
+                                    Discord
+                                </button>
+                                <button type="button" class="social-btn google-btn">
+                                    <i class="fab fa-google"></i>
+                                    Google
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="login-link">
+                            <p class="text-fooding">
+                                Bạn đã có tài khoản? 
+                                <a href="Dangnhap.html" class="text-fooding-link">Đăng nhập tại đây</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Additional Links Section -->
+        <footer class="form-footer-links">
+            <div class="quick-links">
+                <a href="index.html" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <span>Trang Chủ</span>
+                </a>
+                <a href="Howtoplay.html" class="quick-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Hướng Dẫn</span>
+                </a>
+                <a href="https://discord.gg/EaP8TaRtQE" class="quick-link" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
             </div>
-            <div class="form-group">
-                <i class="far fa-key"></i>
-                <input type="password" class="form-input" id="password" placeholder="Mật khẩu" required autofocus>
-                <div class="eye">
-                    <i class="far fa-eye"></i>
-                </div>
-            </div>
-            <div class="form-group">
-                <i class="far fa-key"></i>
-                <input type="password" class="form-input" id="repassword" placeholder="Nhập lại mật khẩu" required autofocus>
-                <div class="eye">
-                    <i class="far fa-eye"></i>
-                </div>
-            </div>
-            <input type="submit" value="Đăng Ký" class="form-submit" onclick="return validate();">
-            <h4 class="text-fooding">Bạn đã có tài khoản? <a href="Dangnhap.html" class="text-fooding-link">Hãy đăng nhập tại đây</a></h4>
-        </form>
+        </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/Dangky.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/Dangky.js"></script>
-<script src="js/main.js"></script>
 </html>

@@ -1,24 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://cdn-longterm.mee6.xyz/plugins/commands/images/841690380290097253/77539f830b4eb4a3a15aa6d9f4f9aec9d726ba907e433877032ab213784ad360.png">
+    <link rel="stylesheet" href="css/Doimatkhau.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link rel="stylesheet" href="../css/Doimatkhau.css">
     <title>Đổi Mật Khẩu - MineBruh</title>
 </head>
 <body>
+    <!-- Main Container -->
     <div id="wrapper">
-        <form action="" id="form-changepassword">
-            <h1 class="form-heading">Đổi Mật Khẩu</h1>
-            <div class="form-group">
-                <i class="far fa-envelope"></i>
-                <input type="email" class="form-input" placeholder="Email">
+        <!-- Header Section with Logo -->
+        <header class="header-section">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/standard_1.gif" alt="MineBruh Logo" class="logo-image">
+                </a>
             </div>
-            <input type="submit" value="Xác nhận" class="form-submit">
-            <h2 class="text-fooding"><a href="index.html" class="text-fooding-link">MineBruh</a></h2>
-        </form>
+        </header>
+
+        <!-- Password Reset Form Section -->
+        <main class="main-content">
+            <section class="reset-section">
+                <form action="" id="form-reset-password" method="post">
+                    <!-- Form Header -->
+                    <div class="form-header">
+                        <h1 class="form-heading">
+                            <i class="fas fa-key form-icon"></i>
+                            Đặt Lại Mật Khẩu
+                        </h1>
+                        <p class="form-description">
+                            Nhập địa chỉ email của bạn để nhận liên kết đặt lại mật khẩu
+                        </p>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="far fa-envelope input-icon"></i>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   class="form-input" 
+                                   placeholder="Email của bạn"
+                                   required
+                                   autocomplete="email">
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="field-hint">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Chúng tôi sẽ gửi liên kết đặt lại mật khẩu đến email này</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="form-submit" id="submit-btn">
+                        <span class="btn-text">Gửi Liên Kết Đặt Lại</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                    </button>
+
+                    <!-- Success/Error Messages -->
+                    <div class="message-container" id="message-container">
+                        <!-- Messages will be inserted here by JavaScript -->
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="info-section">
+                        <div class="info-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="info-content">
+                                <h3>Bảo Mật Cao</h3>
+                                <p>Liên kết đặt lại mật khẩu chỉ có hiệu lực trong 15 phút</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <div class="info-content">
+                                <h3>Phản Hồi Nhanh</h3>
+                                <p>Kiểm tra hộp thư và thư mục spam của bạn</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alternative Actions -->
+                    <div class="form-actions">
+                        <div class="action-links">
+                            <a href="Dangnhap.html" class="action-link primary">
+                                <i class="fas fa-arrow-left"></i>
+                                Quay lại đăng nhập
+                            </a>
+                            <a href="Dangky.html" class="action-link secondary">
+                                <i class="fas fa-user-plus"></i>
+                                Tạo tài khoản mới
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/standard_1.gif" alt="MineBruh Logo" class="footer-logo-image">
+                        <span class="footer-brand-name">MineBruh</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Trang Chủ</a>
+                    <a href="https://discord.gg/EaP8TaRtQE" class="footer-link" target="_blank">Discord</a>
+                    <a href="Taigame.html" class="footer-link">Tải Game</a>
+                    <a href="Capnhat.html" class="footer-link">Cập Nhật</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://discord.gg/EaP8TaRtQE" class="social-link" target="_blank" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MineBruh. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </footer>
     </div>
+
+    <!-- JavaScript -->
+    <script src="js/Doimatkhau.js"></script>
 </body>
 </html>

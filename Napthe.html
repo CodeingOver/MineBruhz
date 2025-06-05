@@ -1,90 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://cdn-longterm.mee6.xyz/plugins/commands/images/841690380290097253/77539f830b4eb4a3a15aa6d9f4f9aec9d726ba907e433877032ab213784ad360.png">
-    <link rel="stylesheet" href="../css/Napthe.css">
+    <link rel="stylesheet" href="css/Napthe.css">
     <title>Nạp Thẻ - MineBruh</title>
 </head>
 <body>
-    <div class="container">
-        <div class="logo"><a href="index.html"><img src="images/standard_1.gif" alt=""></a></div>
-        <div class="warpper">
-            <form action="" id="credit-card">
-                <h1 class="form-heading"><a href="index.html">MINEBRUH</a> NẠP THẺ</h1>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="row-left"><label for="form-input">Tên nhân vật</label></div>
-                        <div class="row-right"><input type="text" name="" id="form-input" required auto></div>
-                    </div>
-                    <div class="row">
-                        <div class="row-left"><label for="what-card">Loại thẻ</label></div>
-                        <div class="row-right">
-                            <select name="" id="what-card">
-                                <option value="" selected>Chọn loại thẻ</option>
-                                <option value="">Viettel</option>
-                                <option value="">Vinaphone</option>
-                                <option value="">Mobifone</option>
-                                <option value="">Vietnamobile</option>
-                                <option value="">Zing</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="row-left"><label for="card-amount">Mệnh giá</label></div>
-                        <div class="row-right">
-                            <select name="" id="card-amount">
-                                <option value="">Chọn mệnh giá (Sai mệnh giá sẽ mất thẻ)</option>
-                                <option value="">10.000 VNĐ (10 COIN)</option>
-                                <option value="">20.000 VNĐ (20 COIN)</option>
-                                <option value="">30.000 VNĐ (30 COIN)</option>
-                                <option value="">50.000 VNĐ (50 COIN)</option>
-                                <option value="">100.000 VNĐ (100 COIN)</option>
-                                <option value="">200.000 VNĐ (200 COIN)</option>
-                                <option value="">300.000 VNĐ (300 COIN)</option>
-                                <option value="">500.000 VNĐ (500 COIN)</option>
-                                <option value="">1.000.000 VNĐ (1000 COIN)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="row-left"><label for="card-serial">Số serial</label> </div>
-                        <div class="row-right"><input type="text" name="" id="card-serial"></div>
-                    </div>
-                    <div class="row">
-                        <div class="row-left"><label for="card-code">Mã thẻ</label></div>
-                        <div class="row-right"><input type="text" name="" id="card-code"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <input type="submit" value="NẠP NGAY" class="form-submit">
-                </div>
-            </form>
-            <div class="warning">
-                <ul>
-                    <li>Lưu ý : vui lòng chọn đúng MỆNH GIÁ THẺ, nếu chọn sai sẽ mất thẻ và không nhận được COIN</li>
-                    <li>Chú ý : tên nhân vật phải trùng với tên trong game kể cả ký tự viết HOA</li>
-                    <li>Ghi sai tên nhân vật sẽ bị nạp vào tài khoản khác, bạn sẽ không nhận được Coin.</li>
-                    <li>Vui lòng giữ lại thẻ cho đến khi nhận được Coin.</li>
-                    <li>Thẻ MOBIFONE hiện nay duyệt rất chậm, Các bạn nên nạp thẻ VIETTEL.</li>
-                    <li>Khi nạp nhớ đọc kỹ thông báo. Nhớ giữ lại mã thẻ phòng trường hợp cần đối.</li>
-                    <li>Nhớ chọn đúng mệnh giá thẻ của thẻ. Chọn sai mệnh giá thẻ nạp sẽ bị lỗi và không được cộng tiền, mất tiền mất thẻ Admin không chịu trách nhiệm.</li>
-                    <li>Khi nạp nếu thấy kết quả trả về là “hệ thống nạp thẻ bảo trì” thì ngừng nạp, và báo lại cho Admin biết.</li>
-                    <li>Nạp qua BANK & MOMO sẽ được KHUYẾN MÃI 20%</li>
-                    <li>Nếu gặp sự cố trong quá trình nạp thẻ, liên hệ tại <a href="https://discord.gg/EaP8TaRtQE">Nhóm hỗ trợ MineBruh</a></li>
-                    <li>Hoặc gủi số seri thẻ cào đến support@gmail.com (Không cần gửi mã thẻ)</li>
-                    <li>Group hỗ trợ cộng đồng Minecraft: <a href="https://discord.gg/EaP8TaRtQE">https://discord.gg/EaP8TaRtQE</a></li>
-                </ul>
-            </div>
-            <div class="QR-code-card">
-                <h1>NẠP BANK & MOMO (+20%)</h1>
-                <p>Quét mã QRCode trên app BANK/MOMO để nhận thông tin & nội dung chuyển khoản <br>KHUYẾN MÃI THÊM 20% KHI NẠP QUA BANK & MOMO</p>
-                <img src="images/rick-roll.png" alt="" width="50%">
-                <p><strong>Tên Chủ TK: ...... </strong><br>
-                    <strong>Số TK: ........</strong></p>
+    <!-- Header Section with Logo -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/standard_1.gif" alt="MineBruh Logo">
+                </a>
             </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Card Recharge Form Section -->
+            <section class="form-section">
+                <div class="wrapper">
+                    <form action="" id="credit-card" method="post">
+                        <h1 class="form-heading">
+                            <a href="index.html">MINEBRUH</a> NẠP THẺ
+                        </h1>
+                        
+                        <!-- Form Fields -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="row-left">
+                                    <label for="card-type">Loại Thẻ:</label>
+                                </div>
+                                <div class="row-right">
+                                    <select name="card-type" id="card-type" required>
+                                        <option value="">Chọn loại thẻ</option>
+                                        <option value="viettel">Viettel</option>
+                                        <option value="mobifone">Mobifone</option>
+                                        <option value="vinaphone">Vinaphone</option>
+                                        <option value="vietnamobile">Vietnamobile</option>
+                                        <option value="gmobile">Gmobile</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="row-left">
+                                    <label for="card-value">Mệnh Giá:</label>
+                                </div>
+                                <div class="row-right">
+                                    <select name="card-value" id="card-value" required>
+                                        <option value="">Chọn mệnh giá</option>
+                                        <option value="10000">10,000 VNĐ</option>
+                                        <option value="20000">20,000 VNĐ</option>
+                                        <option value="30000">30,000 VNĐ</option>
+                                        <option value="50000">50,000 VNĐ</option>
+                                        <option value="100000">100,000 VNĐ</option>
+                                        <option value="200000">200,000 VNĐ</option>
+                                        <option value="300000">300,000 VNĐ</option>
+                                        <option value="500000">500,000 VNĐ</option>
+                                        <option value="1000000">1,000,000 VNĐ</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="row-left">
+                                    <label for="card-serial">Số Serial:</label>
+                                </div>
+                                <div class="row-right">
+                                    <input type="text" name="card-serial" id="card-serial" placeholder="Nhập số serial" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="row-left">
+                                    <label for="card-code">Mã Thẻ:</label>
+                                </div>
+                                <div class="row-right">
+                                    <input type="text" name="card-code" id="card-code" placeholder="Nhập mã thẻ" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="row-left">
+                                    <label for="username">Tên Đăng Nhập:</label>
+                                </div>
+                                <div class="row-right">
+                                    <input type="text" name="username" id="username" placeholder="Nhập tên đăng nhập" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="form-submit">
+                            🎮 NẠP THẺ NGAY
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Important Notice Section -->
+            <section class="notice-section">
+                <div class="warning">
+                    <h2>⚠️ THÔNG TIN QUAN TRỌNG</h2>
+                    <ul>
+                        <li>Vui lòng kiểm tra kỹ thông tin thẻ trước khi nạp</li>
+                        <li>Thẻ sai thông tin sẽ bị trừ 50% giá trị</li>
+                        <li>Thẻ cào phải còn nguyên vẹn, không bị rách hay mờ</li>
+                        <li>Thời gian xử lý nạp thẻ từ 1-5 phút</li>
+                        <li>Liên hệ <a href="https://discord.gg/EaP8TaRtQE" target="_blank">Discord</a> nếu gặp sự cố</li>
+                        <li>Không chia sẻ thông tin thẻ cho người khác</li>
+                        <li>Hệ thống hoạt động 24/7, nạp thẻ mọi lúc</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Payment Methods Section -->
+            <section class="payment-methods">
+                <div class="QR-code-card">
+                    <h1>💳 PHƯƠNG THỨC THANH TOÁN KHÁC</h1>
+                    <p>Ngoài thẻ cào, bạn có thể nạp tiền qua các phương thức sau:</p>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <h3>🏦 Chuyển Khoản Ngân Hàng</h3>
+                            <p>Hỗ trợ tất cả ngân hàng nội địa</p>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <h3>📱 Ví Điện Tử</h3>
+                            <p>MoMo, ZaloPay, ViettelPay</p>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <h3>💎 Thẻ ATM/Visa</h3>
+                            <p>Thanh toán trực tuyến an toàn</p>
+                        </div>
+                    </div>
+
+                    <!-- QR Code for Quick Payment -->
+                    <div class="qr-section">
+                        <h3>📱 QR CODE NHANH</h3>
+                        <p>Quét mã QR để nạp tiền nhanh chóng</p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://minebruh.com/napthe" alt="QR Code Nạp Thẻ">
+                        <p class="qr-note">Quét mã để truy cập trang nạp thẻ</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Section -->
+            <section class="support-section">
+                <div class="support-card">
+                    <h2>🎯 HỖ TRỢ KHÁCH HÀNG</h2>
+                    <div class="support-options">
+                        <div class="support-item">
+                            <h3>💬 Discord</h3>
+                            <p>Tham gia server Discord để được hỗ trợ nhanh nhất</p>
+                            <a href="https://discord.gg/EaP8TaRtQE" target="_blank" class="support-link">
+                                Tham Gia Discord
+                            </a>
+                        </div>
+                        
+                        <div class="support-item">
+                            <h3>📧 Email</h3>
+                            <p>Gửi email cho chúng tôi</p>
+                            <a href="mailto:support@minebruh.com" class="support-link">
+                                support@minebruh.com
+                            </a>
+                        </div>
+                        
+                        <div class="support-item">
+                            <h3>⏰ Thời Gian Hỗ Trợ</h3>
+                            <p>24/7 - Hỗ trợ mọi lúc mọi nơi</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div id="description">
+                <p>© MineBruh 2024 Minecraft Việt Nam MineBruh <br>Website sẽ hoạt động chính thức <br> <br> <br>Tham gia <a href="https://discord.gg/EaP8TaRtQE" target="_blank">nhóm cộng đồng</a></p>
+                <p>Thiết kế bởi 2324802010275@student.tdmu.edu.vn <br>Liên hệ: 2324802010275@student.tdmu.edu.vn <br><br> <br><a href="Taigame.html">Tải game minecraft</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for form validation and enhancements -->
+    <script>
+        // Form validation and enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('credit-card');
+            const submitBtn = document.querySelector('.form-submit');
+            
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const cardType = formData.get('card-type');
+                const cardValue = formData.get('card-value');
+                const cardSerial = formData.get('card-serial');
+                const cardCode = formData.get('card-code');
+                const username = formData.get('username');
+                
+                // Basic validation
+                if (!cardType || !cardValue || !cardSerial || !cardCode || !username) {
+                    alert('⚠️ Vui lòng điền đầy đủ thông tin!');
+                    return;
+                }
+                
+                // Validate serial and code format
+                if (cardSerial.length < 10 || cardCode.length < 10) {
+                    alert('⚠️ Số serial và mã thẻ phải có ít nhất 10 ký tự!');
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.innerHTML = '⏳ Đang Xử Lý...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    alert('✅ Nạp thẻ thành công! Vui lòng kiểm tra tài khoản.');
+                    form.reset();
+                    submitBtn.innerHTML = '🎮 NẠP THẺ NGAY';
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+            
+            // Input formatting
+            const serialInput = document.getElementById('card-serial');
+            const codeInput = document.getElementById('card-code');
+            
+            // Format inputs to uppercase and remove spaces
+            [serialInput, codeInput].forEach(input => {
+                input.addEventListener('input', function() {
+                    this.value = this.value.toUpperCase().replace(/\s/g, '');
+                });
+            });
+            
+            // Add loading animation to submit button
+            submitBtn.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
 </body>
 </html>

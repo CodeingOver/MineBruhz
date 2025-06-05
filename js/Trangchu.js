@@ -4,13 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const slideItems = document.querySelectorAll('.gallery-slider .slide-item');
     const dots = document.querySelectorAll('.gallery-slider .dot');
     const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-
-    let currentSlide = 0;
+    const nextBtn = document.getElementById('next');    let currentSlide = 0;
     const totalSlides = slideItems.length;
     let autoSlideInterval;
-    let isTransitioning = false; // Prevent spam clicking
+    let lastClickTime = 0; // Track last click time for debouncing
     let isTabVisible = true; // Track tab visibility
+    const clickCooldown = 250; // Minimum time between clicks (ms)
       function updateSlider(noAnimation = false, specialEffect = false) {
         if (sliderTrack && slideItems.length > 0) {
             const translateX = -currentSlide * 100;
@@ -50,10 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }    function nextSlide() {
-        if (isTransitioning) return; // Prevent spam clicking
-        
-        isTransitioning = true;
-        setTimeout(() => { isTransitioning = false; }, 400); // Reduced throttle time
+        const now = Date.now();
+        if (now - lastClickTime < clickCooldown) return; // Debounce rapid clicks
+        lastClickTime = now;
         
         if (currentSlide === totalSlides - 1) {
             // Special effect when wrapping from last to first
@@ -64,10 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSlider();
         }
     }    function prevSlide() {
-        if (isTransitioning) return; // Prevent spam clicking
-        
-        isTransitioning = true;
-        setTimeout(() => { isTransitioning = false; }, 400); // Reduced throttle time
+        const now = Date.now();
+        if (now - lastClickTime < clickCooldown) return; // Debounce rapid clicks
+        lastClickTime = now;
         
         if (currentSlide === 0) {
             // Special effect when wrapping from first to last
@@ -108,7 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }    // Dot navigation
     dots.forEach((dot, index) => {
         dot.addEventListener('click', (e) => {
-            if (isTransitioning) return; // Prevent spam clicking
+            const now = Date.now();
+            if (now - lastClickTime < clickCooldown) return; // Debounce rapid clicks
+            lastClickTime = now;
             
             e.preventDefault();
             currentSlide = index;
@@ -128,11 +127,54 @@ document.addEventListener('DOMContentLoaded', () => {
             // Tab is hidden, stop auto-slide
             clearInterval(autoSlideInterval);
         }
+    });    // Keyboard navigation with debouncing
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const now = Date.now();
+            if (now - lastClickTime < clickCooldown) return; // Debounce rapid key presses
+            lastClickTime = now;
+            
+            e.preventDefault();
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+            resetAutoSlide();
+        }
     });
 
     // Pause on hover
-    const sliderContainer = document.querySelector('.slider-container');
+    const sliderContainer = document.querySelector('.slider-container');    // Touch/Swipe support with debouncing
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
     if (sliderContainer) {
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        sliderContainer.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastClickTime < clickCooldown) return; // Debounce rapid swipes
+            
+            touchEndX = e.changedTouches[0].screenX;
+            const swipeDistance = Math.abs(touchEndX - touchStartX);
+            
+            if (swipeDistance > minSwipeDistance) {
+                lastClickTime = now;
+                if (touchEndX < touchStartX) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else if (touchEndX > touchStartX) {
+                    // Swipe right - previous slide
+                    prevSlide();
+                }
+                resetAutoSlide();
+            }
+        });
+        
         sliderContainer.addEventListener('mouseenter', () => {
             clearInterval(autoSlideInterval);
         });

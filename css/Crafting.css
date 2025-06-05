@@ -268,3 +268,166 @@ body
 {
     color: aqua;
 }
+
+/* CSS Responsive cho điện thoại di động */
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+    }
+    
+    .header {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .logo {
+        height: 100px;
+    }
+    
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .nav-content {
+        flex-direction: column;
+        padding: 5px;
+    }
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-menu-list, .linking {
+        font-size: 18px;
+        line-height: 30px;
+        padding: 5px;
+        display: block;
+        text-align: center;
+    }
+    
+    .nav-menu .sub-nav-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+    
+    .sub-nav-menu {
+        margin-left: 0;
+        background-color: #f1f1f1;
+    }
+    
+    .Mid {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .Mid-content {
+        width: 100%;
+        height: auto;
+        border-width: 2px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    
+    .Mid-content-scrip-top {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+    
+    .Mid-content-scrip {
+        width: 90%;
+        height: auto;
+    }
+    
+    .Mid-content-scrip-group-list {
+        width: 90%;
+        box-sizing: border-box;
+    }
+    
+    .article {
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    
+    .ariticle-player div {
+        width: 90%;
+    }
+    
+    .ariticle-discord-Widget {
+        height: 300px;
+        margin-top: 30px;
+    }
+    
+    #description {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+    
+    #description p {
+        margin: 10px 20px;
+        font-size: 14px;
+    }
+    
+    table {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+    
+    .clicking {
+        height: 30px;
+        width: 30px;
+    }
+    
+    /* Cải thiện hiển thị bảng công thức */
+    #count-1, #count-2, #count-3, #count-4, #count-5, #count-6, #count-7, #count-8, #count-9, #count-10 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #count-1 a, #count-2 a, #count-3 a, #count-4 a, #count-5 a, #count-6 a, #count-7 a, #count-8 a, #count-9 a, #count-10 a {
+        margin: 3px;
+    }
+}
+
+/* Điều chỉnh thêm cho màn hình nhỏ hơn */
+@media screen and (max-width: 480px) {
+    .logo {
+        height: 80px;
+    }
+    
+    .nav-menu-list, .linking {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    
+    .Mid-content-scrip-child h3 {
+        font-size: 20px;
+    }
+    
+    .Mid-content-scrip-child p {
+        font-size: 16px;
+    }
+    
+    .Mid-content-scrip-child li {
+        font-size: 16px;
+    }
+    
+    .clicking {
+        height: 25px;
+        width: 25px;
+    }
+    
+    table {
+        width: 95% !important;
+    }
+}

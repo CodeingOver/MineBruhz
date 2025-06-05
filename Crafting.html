@@ -419,80 +419,30 @@
         <footer>
             <div id="description">
                 <p>© MineBruh 2024 Minecraft Việt Nam MineBruh <br>Website sẽ hoạt động chính thức <br> <br> <br>Tham gia <a href="https://discord.gg/EaP8TaRtQE" target="_blank">nhóm cộng đồng</a></p>
-                <p>Thiết kế bởi 2324802010275@student.tdmu.edu.vn <br>Liên hệ: 2324802010275@student.tdmu.edu.vn <br><br> <br><a href="Taigame.html">Tải game minecraft</a></p>
+                <p>Thiết kế bởi clinh5268@gmail.com <br>Liên hệ: clinh5268@gmail.com <br><br> <br><a href="Taigame.html">Tải game minecraft</a></p>
             </div>
         </footer>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
 <script>
-    var hilightcongthuc = document.querySelector("#write-count-1");
-    var chetao = document.getElementById("count-1");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo cơ bản";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-2");
-    var chetao = document.getElementById("count-2");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo các loại khối";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-3");
-    var chetao = document.getElementById("count-3");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo dụng cụ";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-4");
-    var chetao = document.getElementById("count-4");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo vũ khí và giáp";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-5");
-    var chetao = document.getElementById("count-5");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo máy móc";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-6");
-    var chetao = document.getElementById("count-6");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo thức ăn";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-7");
-    var chetao = document.getElementById("count-7");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo thông dụng";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-8");
-    var chetao = document.getElementById("count-8");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo bột nhuộm";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-9");
-    var chetao = document.getElementById("count-9");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo len màu";
-</script>
-<script>
-    var hilightcongthuc = document.querySelector("#write-count-10");
-    var chetao = document.getElementById("count-10");
-    var diemsoluongCT = chetao.querySelectorAll("a");
-    var Tongsoluongcongthuc = diemsoluongCT.length;
-    hilightcongthuc.innerHTML = Tongsoluongcongthuc + " công thức chế tạo thuốc";
+    function updateCraftingCount(sectionId, countId, description) {
+        var hilightcongthuc = document.querySelector(sectionId);
+        var chetao = document.getElementById(countId);
+        var diemsoluongCT = chetao.querySelectorAll("a");
+        var Tongsoluongcongthuc = diemsoluongCT.length;
+        hilightcongthuc.innerHTML = Tongsoluongcongthuc + " " + description;
+    }
+
+    updateCraftingCount("#write-count-1", "count-1", "công thức chế tạo cơ bản");
+    updateCraftingCount("#write-count-2", "count-2", "công thức chế tạo các loại khối");
+    updateCraftingCount("#write-count-3", "count-3", "công thức chế tạo dụng cụ");
+    updateCraftingCount("#write-count-4", "count-4", "công thức chế tạo vũ khí và giáp");
+    updateCraftingCount("#write-count-5", "count-5", "công thức chế tạo máy móc");
+    updateCraftingCount("#write-count-6", "count-6", "công thức chế tạo thức ăn");
+    updateCraftingCount("#write-count-7", "count-7", "công thức chế tạo thông dụng");
+    updateCraftingCount("#write-count-8", "count-8", "công thức chế tạo bột nhuộm");
+    updateCraftingCount("#write-count-9", "count-9", "công thức chế tạo len màu");
+    updateCraftingCount("#write-count-10", "count-10", "công thức chế tạo thuốc");
 </script>
 </html>

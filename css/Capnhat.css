@@ -1,0 +1,997 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Dark Theme Variables - Matching Taigame.css */
+:root {
+    --primary-bg: #0f0f0f;
+    --secondary-bg: #1a1a1a;
+    --card-bg: #262626;
+    --accent-green: #4ade80;
+    --accent-blue: #3b82f6;
+    --accent-orange: #f97316;
+    --accent-red: #ef4444;
+    --accent-yellow: #eab308;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --border-color: #404040;
+    --hover-bg: #333333;
+    --gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
+    --gradient-accent: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--primary-bg);
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(74, 222, 128, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header Styling - Matching Taigame.css exactly */
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Navigation Container */
+.nav-content {
+    background: var(--gradient-primary);
+    display: flex;
+    box-shadow: var(--shadow-medium);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: visible;
+    z-index: 200;
+}
+
+.nav-menu {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    overflow: visible;
+}
+
+.nav-menu-list {
+    margin: 0 2px;
+    position: relative;
+}
+
+.nav-menu-list > a {
+    padding: 12px 20px;
+    display: block;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effects cho tất cả menu items - giống trang chủ */
+.nav-menu-list > a:hover {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Active state for current page */
+.nav-menu-list > a[href="Capnhat.html"] {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+}
+
+/* Don't apply additional hover effects to active page */
+.nav-menu-list > a[href="Capnhat.html"]:hover {
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+.father {
+    position: relative;
+    overflow: visible;
+}
+
+.sub-nav-menu {
+    display: none;
+    position: absolute;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
+    min-width: 200px;
+    z-index: 9999;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.father:hover .sub-nav-menu {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.sub-nav-menu:hover {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-nav-menu a {
+    color: var(--text-primary);
+    padding: 12px 16px;
+    display: block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.sub-nav-menu a:hover {
+    background: var(--hover-bg);
+    color: var(--accent-green);
+}
+
+/* Main Content Layout - Matching Taigame.css exactly */
+.Mid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.Mid-content {
+    flex: 1;
+    background: var(--gradient-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+}
+
+/* Updates Content Styling */
+.Mid-content > section {
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+.updates-hero {
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.updates-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Latest Update Highlight */
+.latest-update {
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.latest-update::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(74, 222, 128, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
+    pointer-events: none;
+}
+
+.update-highlight {
+    position: relative;
+    z-index: 2;
+}
+
+.update-badge {
+    display: inline-block;
+    background: var(--gradient-accent);
+    color: var(--primary-bg);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.update-highlight h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.update-date {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.update-summary {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    background: var(--gradient-accent);
+    color: var(--primary-bg);
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Version History */
+.version-history h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.version-card {
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.version-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.version-card.highlight {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+}
+
+.version-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.version-header h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.version-date {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.version-type {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.version-type.major {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.version-type.minor {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.version-type.patch {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+    color: var(--primary-bg);
+}
+
+.version-content {
+    padding: 30px;
+}
+
+.update-category {
+    margin-bottom: 25px;
+}
+
+.update-category h4 {
+    font-size: 1.1rem;
+    color: var(--accent-green);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.update-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.update-category li {
+    padding: 8px 0;
+    padding-left: 20px;
+    color: var(--text-secondary);
+    position: relative;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.update-category li:hover {
+    border-left-color: var(--accent-green);
+    padding-left: 25px;
+    color: var(--text-primary);
+}
+
+.update-category li::before {
+    content: '•';
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Upcoming Features */
+.upcoming-features h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.upcoming-card {
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.upcoming-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(168, 85, 247, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.upcoming-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+}
+
+.upcoming-card:hover::before {
+    opacity: 1;
+}
+
+.upcoming-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.upcoming-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.upcoming-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.coming-date {
+    display: inline-block;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Server Status */
+.server-status h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.status-item {
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.status-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.status-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.status-icon.online {
+    animation: pulse-green 2s infinite;
+}
+
+.status-icon.maintenance {
+    animation: pulse-yellow 2s infinite;
+}
+
+@keyframes pulse-green {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes pulse-yellow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.status-item h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.status-item p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Maintenance Schedule */
+.maintenance-schedule h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule-item {
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.schedule-time {
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 120px;
+}
+
+.schedule-time .date {
+    display: block;
+    font-weight: 600;
+    color: var(--accent-orange);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.schedule-time .time {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.schedule-content h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.schedule-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Community Feedback */
+.community-feedback h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.feedback-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.feedback-card {
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.feedback-card h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.feedback-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.feedback-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.feedback-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Sidebar - Article - Matching Taigame.css exactly */
+.article {
+    width: 300px;
+    background: var(--gradient-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.ariticle-player {
+    margin-top: 0;
+}
+
+.ariticle-player > div {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ariticle-player > div:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.ariticle-player-online {
+    background: var(--gradient-accent);
+    color: var(--primary-bg);
+}
+
+.ariticle-ip-server {
+    background: var(--card-bg);
+    color: var(--accent-blue);
+}
+
+.ariticle-server-version {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.ariticle-the-loai {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.ariticle-the-loai p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Discord Widget */
+.ariticle-discord-Widget {
+    margin-top: 30px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    height: 500px;
+}
+
+.ariticle-discord-Widget iframe {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer - Matching Taigame.css exactly */
+footer {
+    margin-top: 50px;
+}
+
+#description {
+    max-width: 1200px;
+    background: var(--gradient-primary);
+    margin: 50px auto 0;
+    color: var(--text-secondary);
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+#description p {
+    margin: 20px 40px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#description a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#description a:hover {
+    color: var(--accent-green);
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* Responsive Design - Matching Taigame.css */
+@media (max-width: 768px) {
+    .Mid {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .Mid-content {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    
+    .article {
+        width: 100%;
+        position: static;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-menu-list {
+        margin: 5px;
+    }
+    
+    #description {
+        flex-direction: column;
+        text-align: center;
+        margin: 20px 10px 0;
+    }
+    
+    .header {
+        padding: 0 10px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .upcoming-grid,
+    .status-grid,
+    .feedback-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .schedule-time {
+        min-width: auto;
+        text-align: left;
+    }
+    
+    .version-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 100px;
+    }
+    
+    .nav-menu-list > a {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .updates-hero {
+        padding: 30px 20px;
+    }
+    
+    .latest-update {
+        padding: 20px;
+    }
+    
+    .update-highlight h2 {
+        font-size: 1.5rem;
+    }
+    
+    .version-content,
+    .upcoming-card,
+    .feedback-card {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Scrollbar Styling - Matching Taigame.css */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+/* Floating Animation for Logo - Matching Taigame.css */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

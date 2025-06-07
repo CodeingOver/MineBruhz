@@ -57,10 +57,10 @@ body {
 }
 
 .logo img {
-    height: 80px;
-    width: auto;
-    transition: transform 0.3s ease;
     animation: floatAnimation 3s ease-in-out infinite;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .logo img:hover {

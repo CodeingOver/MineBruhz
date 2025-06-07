@@ -721,6 +721,8 @@ body {
 .option-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
+    color: var(--accent-green);
+    text-decoration: none;
 }
 
 /* Quick Start Section */

@@ -7,21 +7,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle mobile menu
     if (mobileMenuToggle && navContent) {
-        mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             mobileMenuToggle.classList.toggle('active');
             navContent.classList.toggle('active');
         });
-    }
-
-    // Handle dropdown menus on mobile
+    }    // Handle dropdown menus on mobile
     navMenuList.forEach(item => {
         const link = item.querySelector('.linking');
-        if (link) {
+        const submenu = item.querySelector('.sub-nav-menu');
+        
+        if (link && submenu) {
             link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
+                    e.preventDefault(); // Ngăn chặn điều hướng
+                    e.stopPropagation();
+                    
+                    // Toggle dropdown
                     item.classList.toggle('active');
+                    
+                    // Đóng các dropdown khác
+                    navMenuList.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
                 }
+            });
+            
+            // Xử lý click vào submenu links
+            const subLinks = submenu.querySelectorAll('a');
+            subLinks.forEach(subLink => {
+                subLink.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Cho phép điều hướng bình thường cho submenu items
+                    // Đóng menu sau khi click
+                    mobileMenuToggle.classList.remove('active');
+                    navContent.classList.remove('active');
+                    item.classList.remove('active');
+                });
             });
         }
     });
